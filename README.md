@@ -5,7 +5,7 @@ A production-ready automation built in **n8n** that assigns **exactly one team**
 The system replaces manual lead triage with deterministic, rule-based routing that runs automatically and leaves a clear audit trail.
 
 <p align="center">
-  <img src="assets/n8n-workflow.png" width="850" alt="n8n Workflow Overview">
+  <img src="assets/workflow.png" width="850" alt="n8n Workflow Overview">
 </p>
 
 ---
@@ -56,7 +56,7 @@ At a high level, the workflow follows a **compute → act** pattern:
    - `priority_level`
    - `routing_reason`
 4. 📝 Results are written back to the same row  
-5. 🔔 (Optional) Notifications are sent downstream  
+5. 🔔 Notifications are sent downstream  
 
 This structure keeps the workflow predictable and easy to change later.
 
@@ -74,7 +74,7 @@ This structure keeps the workflow predictable and easy to change later.
 - ⚙️ **n8n** — workflow orchestration  
 - 🧠 **JavaScript** — routing and priority logic  
 - 📊 **Google Sheets** — intake and system of record  
-- 💬 **Slack** (optional) — team notifications  
+- 💬 **Slack** — team notifications  
 
 ---
 
@@ -142,11 +142,5 @@ The same input always produces the same result.
 All cases resolve safely without manual intervention.
 
 ---
-
-## 🔔 Optional Extension (Example)
-
-<p align="center">
-  <img src="assets/slack-notification.png" width="700" alt="Slack Notification Example">
-</p>
 
 The system is designed so notifications (Slack, email, CRM sync, AI scoring) can be added **after** the decision step without breaking single-path execution.
